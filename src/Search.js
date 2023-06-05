@@ -1,9 +1,19 @@
 import React,{useState} from 'react';
 import {Box, Button, FormControl, InputLabel, MenuItem, Select, TextField} from '@mui/material';
+import { useDispatch } from 'react-redux';
 function Search() {
+  const[name,setName]=useState('');
+  const[phoneno,setPhoneno]=useState('');
     const[status,setStatus]=useState("");
+    const dispatch=useDispatch();
     const handleChange=(event)=>{
         setStatus(event.target.value);
+    }
+    const SearchHandler=(e)=>{
+      e.preventDefault();
+      console.log("search");
+      
+      
     }
   return (
     <Box>
@@ -16,7 +26,8 @@ function Search() {
         label="UserName"
         variant="outlined"
         size="small"
-        style={{margin:10}}>
+        value={name}
+        onChange={(e)=>setName(e.target.value)}>
         </TextField>
         </FormControl>
         <FormControl>
@@ -24,6 +35,8 @@ function Search() {
         label="Phone"
         variant="outlined"
         size="small"
+        value={phoneno}
+        onChange={(e)=>setPhoneno(e.target.value)}
         style={{margin:10}}>
         </TextField>
         </FormControl>
@@ -47,7 +60,7 @@ function Search() {
         </Select>
         </FormControl>
         <FormControl>
-            <Button sx={{margin:1}}variant="outlined">Search</Button>
+            <Button sx={{margin:1}}variant="outlined" onClick={SearchHandler}>Search</Button>
         </FormControl>
         
           </Box>

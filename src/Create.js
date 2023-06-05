@@ -34,6 +34,8 @@ function Create() {
     variant="outlined"
     size="small"
     value={name}
+    required
+    error={!name}
     style={{margin:10}}
     onChange={(e)=>setName(e.target.value)}>
     </TextField>

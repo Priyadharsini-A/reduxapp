@@ -9,6 +9,7 @@ addUser:(state,action)=>{
     state.push(action.payload)
 },
 updateUser:(state,action)=>{
+    console.log("update",action.payload)
 const{id,name,phoneno,email,status,organizationname}=action.payload;
 const uu=state.find(user=>user.id==id);
 if(uu){
