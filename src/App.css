@@ -1,6 +1,9 @@
 .header{
-  background-color: yellow;
+  
   height:75px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .asidebar{
   background-color: green;
@@ -8,4 +11,13 @@
   height:600px;
   float:left;
 
+}
+.logo{
+  height:60px;
+  width:100px;
+}
+.logoflex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

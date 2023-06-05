@@ -19,7 +19,7 @@ function Home() {
     <Grid item xs={11}>
       <Box sx={{display:'flex',flexDirection:'column', }}>
         <Box sx={{
-backgroundColor:"#1976d2",
+backgroundColor:"white",
 height:75,
 display:'flex',
 justifyContent:'space-between',
@@ -27,7 +27,7 @@ alignItems:'center',
 
         }}>
             <Box>
-        <Typography sx={{width:200,display:'flex',justifyContent:'center',color:'white'}}>UserList</Typography>
+        <Typography sx={{width:200,display:'flex',justifyContent:'center',color:'blue'}}>UserList</Typography>
 
             </Box>
             
