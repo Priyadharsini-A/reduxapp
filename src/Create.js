@@ -11,7 +11,7 @@ function Create() {
     const[phoneno,setPhoneno]=useState('');
     const[organizationname,setOrgname]=useState('');
     const[errors,setErrors]=useState('');
-    const users=useSelector((state)=>state.users);
+    const users=useSelector((state)=>state.users.userList);
     const dispatch=useDispatch();
     const navigate=useNavigate();
 

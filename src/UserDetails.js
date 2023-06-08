@@ -26,9 +26,11 @@ const style = {
 
 
 function UserDetails() {
-const users=useSelector((state)=>state.users)
+const users=useSelector((state)=>state.users.userList);
+const filteredusers=useSelector((state)=>state.users.filteredUsers);
 const [userid,setuserId]=useState(0);
 const [open, setOpen] = React.useState(false);
+
   const handleOpen = (cellValues) => {
     console.log('true');
     console.log(cellValues.id);
@@ -38,7 +40,7 @@ const [open, setOpen] = React.useState(false);
   }
   const handleClose = () => setOpen(false);
 
-
+const displayrow=filteredusers.length>0?filteredusers:users;
 
 const columns: GridColDef[] =[
   {field:"id",hide:"true"},
@@ -71,7 +73,7 @@ renderCell: (cellValues) => (
         </Box>
        <DataGrid
        columns={columns}
-       rows={users}
+       rows={displayrow}
        
        >
         </DataGrid> 

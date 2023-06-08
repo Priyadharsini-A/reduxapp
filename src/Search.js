@@ -1,10 +1,12 @@
 import React,{useState} from 'react';
 import {Box, Button, FormControl, InputLabel, MenuItem, Select, TextField} from '@mui/material';
 import { useDispatch } from 'react-redux';
+import { searchUsers } from './UserReducer';
 function Search() {
   const[name,setName]=useState('');
   const[phoneno,setPhoneno]=useState('');
     const[status,setStatus]=useState("");
+    
     const dispatch=useDispatch();
     const handleChange=(event)=>{
         setStatus(event.target.value);
@@ -12,7 +14,22 @@ function Search() {
     const SearchHandler=(e)=>{
       e.preventDefault();
       console.log("search");
-      
+      const searchCriteria = {
+        username: name,
+        phoneno: phoneno,
+        status: status,
+      };
+      console.log("searchcriteria",searchCriteria);
+      dispatch(searchUsers(searchCriteria));
+      if (name !== '') {
+        setName('');
+      }
+      if (phoneno !== '') {
+        setPhoneno('');
+      }
+      if (status !== '') {
+        setStatus('');
+      }
       
     }
   return (
@@ -54,9 +71,9 @@ function Search() {
            
           }}
         >
-        <MenuItem value={1}>Active</MenuItem>
-        <MenuItem value={2}>InActive</MenuItem>
-        <MenuItem value={3}>All</MenuItem>
+        <MenuItem value="Active">Active</MenuItem>
+        <MenuItem value="InActive">InActive</MenuItem>
+        <MenuItem value="All">All</MenuItem>
         </Select>
         </FormControl>
         <FormControl>

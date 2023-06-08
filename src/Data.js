@@ -11,7 +11,7 @@ export const UserList=[{
    id:2,
     name:"user2",
     email:"user2@gmail.com",
-    status:"Active",
+    status:"InActive",
     phoneno:"8722967986",
     organizationname:"BCT"
 

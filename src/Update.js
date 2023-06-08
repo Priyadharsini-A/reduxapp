@@ -10,7 +10,7 @@ import { updateUser } from './UserReducer';
 function Update() {
     const {id}=useParams(); 
     console.log('id',+id)
-    const users=useSelector((state)=>state.users);
+    const users=useSelector((state)=>state.users.userList);
     console.log(users);
     const existingUser=users.filter((user)=>{
        return user.id==id;
